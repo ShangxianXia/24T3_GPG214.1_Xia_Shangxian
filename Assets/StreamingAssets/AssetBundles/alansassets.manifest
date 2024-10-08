@@ -1,0 +1,57 @@
+ManifestFileVersion: 0
+CRC: 319788068
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ee12df00d9f781da8311e5e9abeabc22
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8c2be19307870a3d38fc150ca73318d7
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ee12df00d9f781da8311e5e9abeabc22
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 62
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4109d6747d9b314fa8c11b4e2d087a4, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/gpg214 Project modifications/Textures/SkullEmoji.png
+- Assets/gpg214 Project modifications/Prefabs/PushableSkull.prefab
+- Assets/gpg214 Project modifications/Audios/oof.mp3
+- Assets/gpg214 Project modifications/Textures/SkullSprite.png
+Dependencies: []

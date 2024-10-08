@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 3118676100
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 72ff90b6782d853487c9425fb5abd791
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3e0baca651807af03a40faed21edf8ed
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 72ff90b6782d853487c9425fb5abd791
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 89
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/gpg214 Project modifications/Textures/SkullEmoji.png
+- Assets/gpg214 Project modifications/Audios/oof.mp3
+- Assets/gpg214 Project modifications/Textures/SkullSprite.png
+Dependencies: []
