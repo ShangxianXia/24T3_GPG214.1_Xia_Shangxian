@@ -66,7 +66,9 @@ public class TextureStreaming : MonoBehaviour
             Texture2D spritetexture = new Texture2D(2, 2);
             spritetexture.LoadImage(spriteBytes); // takes bytes in and converts into image
 
-            skullSprite.sprite = Sprite.Create(spritetexture, new Rect(0, 0, spritetexture.width, spritetexture.height), Vector2.zero);
+            Sprite skullSprite = Sprite.Create(spritetexture, new Rect(0, 0, spritetexture.width, spritetexture.height), new Vector2(0.5f, 0.5f), 72);
+
+            GetComponent<SpriteRenderer>().sprite = skullSprite;
         }
         else
         {

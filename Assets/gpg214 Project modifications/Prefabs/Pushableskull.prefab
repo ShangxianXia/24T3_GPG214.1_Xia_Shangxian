@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 5865889333165008710}
   - component: {fileID: 6708390912815455325}
   - component: {fileID: 8304876826938931136}
+  - component: {fileID: -698192352496337598}
   m_Layer: 31
   m_Name: Pushableskull
   m_TagString: Untagged
@@ -335,6 +336,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-698192352496337598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099129549586105299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7439d547b4935409b1511bda50faf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: SkullEmoji.png
+  SpriteName: SkullSprite.png
+  skullSprite: {fileID: 0}
+  folderName: Pictures
+  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
 --- !u!1 &3981735368362479945
 GameObject:
   m_ObjectHideFlags: 0

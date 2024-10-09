@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.Windows;
+using System.IO;
 
 public class BundleCreator
 {
     [MenuItem("Assets/Build AssetBundles")]
     static void BuildAllAssetBundles()
     {
-        string assetBundleDirectory = "Assets/AssetBundles";
+        //string assetBundleDirectory = "Assets/StreamingAssets/AssetBundles";
+
+        string assetBundleDirectory = Path.Combine(Application.streamingAssetsPath, "AssetBundles");
 
         if (!Directory.Exists(assetBundleDirectory))
         {
