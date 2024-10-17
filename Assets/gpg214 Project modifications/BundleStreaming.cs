@@ -50,7 +50,7 @@ public class BundleStreaming : MonoBehaviour
 
         Debug.Log("Beginning to load new image for pushable skull");
 
-        Sprite pictureSprite = alansBundle.LoadAsset<Sprite>("SkullEmoji.png");
+        Sprite pictureSprite = alansBundle.LoadAsset<Sprite>("Skull.png");
 
 
         if (textureChange != null)

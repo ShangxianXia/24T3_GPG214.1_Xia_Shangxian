@@ -348,12 +348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df7439d547b4935409b1511bda50faf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: SkullEmoji.png
-  SpriteName: SkullSprite.png
+  spriteFileName: Skull.png
   skullSprite: {fileID: 0}
   folderName: Pictures
-  folderPath: C:/Users/1032883/Documents/24T3_GPG214.1_Xia_Shangxian/Assets/StreamingAssets
-  combinedFilePathLocation: 
+  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
   combinedSpriteFilePathLocation: 
 --- !u!1 &3981735368362479945
 GameObject:

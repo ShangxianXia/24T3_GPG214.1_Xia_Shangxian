@@ -5,7 +5,7 @@ using System.IO;
 
 public class AudioStreaming : MonoBehaviour
 {
-    public string fileName = "oof.mp3";
+    public string fileName = "IHaveNoClue.mp3";
 
     public string folderName = "Audios";
     public string folderPath = Application.streamingAssetsPath;
@@ -18,6 +18,8 @@ public class AudioStreaming : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fileName = "IHaveNoClue.mp3";
+
         combinedFilePathLocation = "";
 
         combinedFilePathLocation = Path.Combine(folderPath, folderName, fileName);
@@ -28,6 +30,16 @@ public class AudioStreaming : MonoBehaviour
         {
             Debug.Log("Component that plays audio is not there, e.g GetComponent<AudioSource>");
             return;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            LoadSoundFile();
+            playSoundFile();
+            Debug.Log("N has been pressed playing audio");
         }
     }
 
@@ -62,7 +74,7 @@ public class AudioStreaming : MonoBehaviour
             }
 
             // call the create function
-            theAudioThatsBeingPlayed = AudioClip.Create("Oof", floatArray.Length, 1, 44100, false);
+            theAudioThatsBeingPlayed = AudioClip.Create("IHaveNoClue", floatArray.Length, 1, 44100, false);
 
             // sets the audio data
             theAudioThatsBeingPlayed.SetData(floatArray, 0);

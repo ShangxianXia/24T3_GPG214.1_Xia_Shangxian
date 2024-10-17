@@ -15,17 +15,13 @@ public class JSONSave : MonoBehaviour
 
     public GameObject playerToTeleport;
 
-    //public int timesThePlayerSaved;
-
-    //public int timesThePlayerLoaded;
-
-    // Start is called before the first frame update
     void Start()
     {
+        // makes the file path
         fullFilePath = Path.Combine(folderPath, jsonFile);
-
+        // finds Ellen
         playerToTeleport = GameObject.Find("Ellen");
-
+        // saves ellens name in the JSon file
         dataToBeSavedRef.nameToBeSaved = GameObject.Find("Ellen").name;
     }
 
@@ -34,12 +30,14 @@ public class JSONSave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
+            // increments the variable
             dataToBeSavedRef.timesThePlayerSaved++;
             Save();
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
+            // increments the variable
             dataToBeSavedRef.timesThePlayerLoaded++;
             Load();
         }
@@ -47,12 +45,13 @@ public class JSONSave : MonoBehaviour
      
     public void Save()
     {
+        // sets the players to the saved position
         dataToBeSavedRef.SetPlayerPosition(playerToTeleport.transform.position);
 
         Debug.Log("Name thats saved: " + dataToBeSavedRef.nameToBeSaved);
-
+        // converts the public variables in dataToBeSavedRef to become JSONfile writable
         string jsonData = JsonUtility.ToJson(dataToBeSavedRef);
-
+        // writes the public variables in dataToBeSavedRef
         File.WriteAllText(fullFilePath, jsonData);
 
         Debug.Log("Player saved to json file: " + dataToBeSavedRef.timesThePlayerSaved + " times!");
@@ -62,12 +61,14 @@ public class JSONSave : MonoBehaviour
     {
         if (File.Exists(fullFilePath))
         {
+            // reads all the JSON file data
             string jsonData = File.ReadAllText(fullFilePath);
-
+            // converts json file stuff to the dataToBeSavedRef
             dataToBeSavedRef = JsonUtility.FromJson<DataToBeSaved>(jsonData);
 
             if (dataToBeSavedRef != null)
             {
+                // teleports the player to the recently saved position
                 Debug.Log("Player loaded json file: " + dataToBeSavedRef.timesThePlayerLoaded + " times!");
                 playerToTeleport.transform.position = dataToBeSavedRef.ReturnPlayerPosition();
                 Debug.Log("Name thats loaded: " + dataToBeSavedRef.nameToBeSaved);
