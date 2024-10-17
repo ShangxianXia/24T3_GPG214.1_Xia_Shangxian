@@ -6,15 +6,27 @@ using UnityEngine;
 public class JSONSave : MonoBehaviour
 {
     public DataToBeSaved dataToBeSavedRef = new DataToBeSaved();
-    public string playerVector3Cords = "Players position.json";
+
+    public string jsonFile = "JSONFile.json";
+
     public string folderPath = Application.streamingAssetsPath;
+
     private string fullFilePath = string.Empty;
+
     public GameObject playerToTeleport;
+
+    //public int timesThePlayerSaved;
+
+    //public int timesThePlayerLoaded;
 
     // Start is called before the first frame update
     void Start()
     {
-        fullFilePath = Path.Combine(folderPath, playerVector3Cords);
+        fullFilePath = Path.Combine(folderPath, jsonFile);
+
+        playerToTeleport = GameObject.Find("Ellen");
+
+        dataToBeSavedRef.nameToBeSaved = GameObject.Find("Ellen").name;
     }
 
     // Update is called once per frame
@@ -22,11 +34,13 @@ public class JSONSave : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
+            dataToBeSavedRef.timesThePlayerSaved++;
             Save();
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
+            dataToBeSavedRef.timesThePlayerLoaded++;
             Load();
         }
     }
@@ -35,11 +49,13 @@ public class JSONSave : MonoBehaviour
     {
         dataToBeSavedRef.SetPlayerPosition(playerToTeleport.transform.position);
 
+        Debug.Log("Name thats saved: " + dataToBeSavedRef.nameToBeSaved);
+
         string jsonData = JsonUtility.ToJson(dataToBeSavedRef);
 
         File.WriteAllText(fullFilePath, jsonData);
 
-        Debug.Log("Saved to json file");
+        Debug.Log("Player saved to json file: " + dataToBeSavedRef.timesThePlayerSaved + " times!");
     }
 
     public void Load()
@@ -52,8 +68,9 @@ public class JSONSave : MonoBehaviour
 
             if (dataToBeSavedRef != null)
             {
-                Debug.Log("New save loaded");
+                Debug.Log("Player loaded json file: " + dataToBeSavedRef.timesThePlayerLoaded + " times!");
                 playerToTeleport.transform.position = dataToBeSavedRef.ReturnPlayerPosition();
+                Debug.Log("Name thats loaded: " + dataToBeSavedRef.nameToBeSaved);
             }
             else
             {

@@ -352,7 +352,9 @@ MonoBehaviour:
   SpriteName: SkullSprite.png
   skullSprite: {fileID: 0}
   folderName: Pictures
-  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
+  folderPath: C:/Users/1032883/Documents/24T3_GPG214.1_Xia_Shangxian/Assets/StreamingAssets
+  combinedFilePathLocation: 
+  combinedSpriteFilePathLocation: 
 --- !u!1 &3981735368362479945
 GameObject:
   m_ObjectHideFlags: 0

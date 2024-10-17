@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2028156148
+CRC: 3033596878
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 45c82fd5a4fa0f764b816a768f3e973d
+    Hash: ea19aba3213dba610ab84b4e2ce3e3aa
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f9e44cf1d450cfb5115b31db0e9cb8d7
+    Hash: 939ca0eeeb63e5c79d512079bbdc0c5e
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 45c82fd5a4fa0f764b816a768f3e973d
+    Hash: ea19aba3213dba610ab84b4e2ce3e3aa
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -32,8 +32,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 83
   Script: {instanceID: 0}
-- Class: 89
-  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: f4109d6747d9b314fa8c11b4e2d087a4, type: 3}
 - Class: 114
@@ -53,7 +51,5 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/gpg214 Project modifications/Prefabs/Pushableskull.prefab
-- Assets/gpg214 Project modifications/Textures/SkullEmoji.png
 - Assets/gpg214 Project modifications/Audios/oof.mp3
-- Assets/gpg214 Project modifications/Textures/SkullSprite.png
 Dependencies: []

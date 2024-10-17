@@ -21343,7 +21343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: oof.mp3
   folderName: Audios
-  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
+  folderPath: C:/Users/1032883/Documents/24T3_GPG214.1_Xia_Shangxian/Assets/StreamingAssets
   theAudioThatsBeingPlayed: {fileID: 0}
 --- !u!82 &765525388
 AudioSource:
@@ -31822,7 +31822,9 @@ MonoBehaviour:
   SpriteName: SkullSprite.png
   skullSprite: {fileID: 0}
   folderName: Pictures
-  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
+  folderPath: C:/Users/1032883/Documents/24T3_GPG214.1_Xia_Shangxian/Assets/StreamingAssets
+  combinedFilePathLocation: 
+  combinedSpriteFilePathLocation: 
 --- !u!212 &1386500857
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39805,8 +39807,8 @@ MonoBehaviour:
     - 0
     - 0
   playerVector3Cords: Players position.json
-  folderPath: E:/SAESchoolStuff/overall gpg214/gpg214 pr1/Assets/StreamingAssets
-  playerToTeleport: {fileID: 1141565045}
+  folderPath: C:/Users/1032883/Documents/24T3_GPG214.1_Xia_Shangxian/Assets/StreamingAssets
+  playerToTeleport: {fileID: 0}
 --- !u!1 &1557879892
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ public class AudioStreaming : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        combinedFilePathLocation = "";
+
         combinedFilePathLocation = Path.Combine(folderPath, folderName, fileName);
 
         audioSource = GetComponent<AudioSource>();

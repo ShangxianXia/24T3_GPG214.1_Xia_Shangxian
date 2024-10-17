@@ -6,6 +6,9 @@ using UnityEngine;
 public class DataToBeSaved
 {
     public float[] playerPosition = new float[] { 0, 0, 0 };
+    public int timesThePlayerSaved;
+    public int timesThePlayerLoaded;
+    public string nameToBeSaved;
 
     public Vector3 ReturnPlayerPosition()
     {
