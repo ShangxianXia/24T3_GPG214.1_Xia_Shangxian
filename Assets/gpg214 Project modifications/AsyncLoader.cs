@@ -1,59 +1,48 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class AsyncLoader : MonoBehaviour
 {
-    private Action OnLevelLoadedAction;
+    [SerializeField] private JSONSave jsonSaveRef;
 
-    [SerializeField] private string LevelToLoad = "Un-named scene";
+    public Texture skullPicture;
+    public AudioClip audioClip;
+    public AssetBundle alansBundle;
 
-    private void OnEnable()
+    public string jsonFileName;
+    public string jsonData;
+
+    public string streamingAssetFolderPath = Application.streamingAssetsPath;
+
+    IEnumerator Start()
     {
-        OnLevelLoadedAction += OnLevelLoaded;
+        jsonSaveRef = GameObject.Find("JsonSaving").GetComponent<JSONSave>();
+
+        jsonFileName = "JSONFile.json";
+        yield return StartCoroutine(AsyncLoadingJsonFile());
+
+
     }
 
-    private void OnDisable()
+    private void Update()
     {
-        OnLevelLoadedAction -= OnLevelLoaded;
+        
     }
 
-    private void Start()
+    IEnumerator AsyncLoadingJsonFile()
     {
-        StartCoroutine(CoroutineLoadLevel(LevelToLoad, OnLevelLoadedAction));
-    }
+        UnityWebRequest jsonDataRequest = UnityWebRequest.Get(Path.Combine(streamingAssetFolderPath, jsonFileName));
 
-    IEnumerator CoroutineLoadLevel(string sceneName,  Action OnLevelLoadedCallBack)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        asyncLoad.allowSceneActivation = false; // turn off scene activation or script wont exist 
+        AsyncOperation downloadingJsonData = jsonDataRequest.SendWebRequest();
 
-        // the 0.9f is the loadin of all the assets for the next scene
-        // the last 0.1 is swapping from current scene to next.
+        jsonData = jsonDataRequest.downloadHandler.text;
 
-        while (asyncLoad.progress < 0.9f)
-        {
-            Debug.Log("Loading...");
-            yield return null;
-        }
-
-        // invoke the action (Event) to let everyone know the scene loaded correctly
-        if (OnLevelLoadedCallBack != null)
-        {
-            OnLevelLoadedCallBack.Invoke();
-            yield return null;
-        }
-
-        // allow the scene to activate and complete its loading to 100%
-        asyncLoad.allowSceneActivation = true;
         yield return null;
-    }
-
-    private void OnLevelLoaded() 
-    {
-        Debug.Log("The main scene has loaded");
     }
 
 }
