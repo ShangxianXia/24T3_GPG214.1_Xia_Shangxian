@@ -5,6 +5,8 @@ namespace Gamekit2D
 {
     public class SceneControllerWrapper : MonoBehaviour
     {
+        public AsyncLoader asyncLoaderRef;
+
         public void RestartZone (bool resetHealth)
         {
             SceneController.RestartZone (resetHealth);
@@ -12,7 +14,7 @@ namespace Gamekit2D
 
         public void TransitionToScene (TransitionPoint transitionPoint)
         {
-            SceneController.TransitionToScene (transitionPoint);
+            SceneController.TransitionToScene(transitionPoint);
         }
 
         public void RestartZoneWithDelay(float delay)

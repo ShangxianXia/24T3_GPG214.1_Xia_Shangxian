@@ -24,7 +24,15 @@ public class TextureStreaming : MonoBehaviour
         // finds the path of the skull png
         combinedSpriteFilePathLocation = Path.Combine(folderPath, folderName, spriteFileName);
 
-        LoadSprite();
+        //LoadSprite();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            LoadSprite();
+        }
     }
 
     private void LoadSprite()

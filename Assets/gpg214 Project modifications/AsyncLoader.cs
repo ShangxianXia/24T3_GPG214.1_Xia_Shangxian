@@ -8,41 +8,50 @@ using UnityEngine.SceneManagement;
 
 public class AsyncLoader : MonoBehaviour
 {
-    [SerializeField] private JSONSave jsonSaveRef;
+    private AsyncOperation asyncOperation;
+    public string spriteFileName = "SmallerSkull.png";
+    public string folderName = "Pictures";
+    public SpriteRenderer spriteRenderer;
 
-    public Texture skullPicture;
-    public AudioClip audioClip;
-    public AssetBundle alansBundle;
-
-    public string jsonFileName;
-    public string jsonData;
-
-    public string streamingAssetFolderPath = Application.streamingAssetsPath;
-
-    IEnumerator Start()
+    private void Start()
     {
-        jsonSaveRef = GameObject.Find("JsonSaving").GetComponent<JSONSave>();
-
-        jsonFileName = "JSONFile.json";
-        yield return StartCoroutine(AsyncLoadingJsonFile());
-
-
+        folderName = "Pictures";
+        spriteFileName = "SmallerSkull.png";
     }
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Debug.Log("async loaded texture");
+            StartCoroutine(AsyncLoadBoxTexture(spriteFileName));
+        }
     }
 
-    IEnumerator AsyncLoadingJsonFile()
+    public IEnumerator AsyncLoadBoxTexture(string spriteFileName)
     {
-        UnityWebRequest jsonDataRequest = UnityWebRequest.Get(Path.Combine(streamingAssetFolderPath, jsonFileName));
+        string filePath = Path.Combine(Application.streamingAssetsPath, folderName, spriteFileName);
 
-        AsyncOperation downloadingJsonData = jsonDataRequest.SendWebRequest();
+        UnityWebRequest textureRequest = UnityWebRequestTexture.GetTexture(filePath);
+        asyncOperation = textureRequest.SendWebRequest();
 
-        jsonData = jsonDataRequest.downloadHandler.text;
+        while (!asyncOperation.isDone)
+        {
+            yield return null;
+        }
 
-        yield return null;
+        if (textureRequest.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log("Path lookin at: " + filePath);
+            Debug.Log("Failed texture request: " + textureRequest.error);
+            yield break;
+        }
+
+        Texture2D texture = DownloadHandlerTexture.GetContent(textureRequest);
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 32);
+        spriteRenderer.sprite = sprite;
+
+        textureRequest.Dispose();
     }
 
 }

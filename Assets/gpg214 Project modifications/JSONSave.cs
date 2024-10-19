@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JSONSave : MonoBehaviour
 {
@@ -63,7 +64,6 @@ public class JSONSave : MonoBehaviour
         {
             // reads all the JSON file data
             string jsonData = File.ReadAllText(fullFilePath);
-
 
             // converts json file stuff to the dataToBeSavedRef
             dataToBeSavedRef = JsonUtility.FromJson<DataToBeSaved>(jsonData);
